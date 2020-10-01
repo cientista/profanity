@@ -37,6 +37,8 @@ RUN git clone git://github.com/profanity-im/libmesode.git
 
 WORKDIR /usr/src/stabber
 RUN ./bootstrap.sh
+RUN PYTHON_VERSION=3
+RUN export PYTHON_VERSION
 RUN ./configure --prefix=/usr --disable-dependency-tracking
 RUN make
 RUN make install
